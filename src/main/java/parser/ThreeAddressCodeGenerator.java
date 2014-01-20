@@ -9,13 +9,6 @@ import lexer.Token;
 
 import java.io.IOException;
 
-/**
- * Created with IntelliJ IDEA.
- * User: harsha
- * Date: 12/25/13
- * Time: 9:47 AM
- * To change this template use File | Settings | File Templates.
- */
 public class ThreeAddressCodeGenerator {
 
     Node generateCodeForNode(AbstractNode left, AbstractNode right, String op) throws IOException {
