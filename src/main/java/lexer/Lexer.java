@@ -21,7 +21,7 @@ public class Lexer {
 
     private Type currentType;
 
-    void reserve(Id t)
+   public void reserve(Id t)
     {
         words.put (t.lexeme, t) ;
     }
@@ -122,5 +122,13 @@ public class Lexer {
 
     public void setCurrentType(Type currentType) {
         this.currentType = currentType;
+    }
+
+    public Hashtable getWords() {
+        return words;
+    }
+
+    public void setWords(Hashtable words) {
+        this.words = words;
     }
 }

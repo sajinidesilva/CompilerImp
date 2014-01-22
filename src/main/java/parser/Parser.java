@@ -11,10 +11,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Parser {
+
+    public boolean matchExecuted = false;
+
     public StringBuffer postFix=new StringBuffer();
     private static String lookahead;
     private Lexer lexer;// lexical analyzer for this parser
     private StackMachine stackMachine;
+
     private Token look; // lookahead tagen
     Env top = null; // current or top symbol table
     int used = 0; // storage processedSymbols for declarations
@@ -39,6 +43,7 @@ public class Parser {
 
     void match(int t) throws IOException {
         if ( look.tag == t && skipFlag==-1) {
+            matchExecuted=true;
             move();
         } else if(skipFlag==1) {
             skipFlag=-1;
